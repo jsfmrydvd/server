@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Control My Stuff | DailyIoT</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/style.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="background1">
+    <!-- <div class="container"> -->
+    <!-- <div class="row"> -->
+    <div class="col-md-6">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="inner cover">
+                        <h1 class="cover-heading">Mouse</h1>
+                        <div class="toggle toggle--daynight">
+                            <input type="checkbox" id="toggle--daynight" class="toggle--checkbox">
+                            <label class="toggle--btn" for="toggle--daynight"><span class="toggle--feature"></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="inner cover">
+                        <h1 class="cover-heading" id="lamp_shadow">Lamp</h1>
+                        <input type="checkbox" id="light-switch" />
+                        <label for="light-switch" id="light-switch-label">
+                          <div class="screw"></div>
+                          <div class="switch"></div>
+                          <div class="screw"></div>
+                        </label>
+                        <div id="background"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="inner cover">
+                        <h1 class="cover-heading">Coffee maker</h1>
+                        <div class="toggle toggle--push toggle--push--glow">
+                            <input type="checkbox" id="toggle--push--glow" class="toggle--checkbox">
+                            <label class="toggle--btn" for="toggle--push--glow" data-label-on="on" data-label-off="off"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="inner cover">
+                        <div class="wrapper">
+                            <h1 class="cover-heading">Lorem ipsum</h1>
+                            <p>
+
+                            </p>
+                            <form class="form" action="" id="form">
+                                <input type="text" class="name" placeholder="Message..." id="Input">
+                                <div>
+                                    <p class="name-help">Please enter a message.</p>
+                                </div>
+                                <input type="submit" class="submit" value="Submit">
+                                <input type="reset" class="submit" value="Reset">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!--  <script>
+      const socket = io('http://localhost');
+    </script> -->
+    <script type="text/javascript">
+        $(".name").focus(function() {
+            $(".name-help").slideDown(500);
+        }).blur(function() {
+            $(".name-help").slideUp(500);
+        });
+        var socket = io.connect("/");
+        $("#toggle--daynight").change(function() {
+            socket.emit("stateChanged", this.checked);
+        });
+        $("#light-switch").change(function() {
+            socket.emit("stateChanged", this.checked);
+        });
+        $("#toggle--push--glow").change(function() {
+            socket.emit("stateChanged", this.checked);
+        });
+        $(document).ready(function() {
+            $('#form').submit(function() {
+                socket.emit('stateChanged', $('#Input').val());
+                //socket.emit('message', "Input");
+                //$('#Input').val('');
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

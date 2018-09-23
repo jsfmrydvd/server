@@ -1,0 +1,878 @@
+/*
+ * Globals
+ */
+
+/* Links */
+
+a, a:focus, a:hover {
+    color: #fff;
+}
+
+/* Custom default button */
+
+.btn-default, .btn-default:hover, .btn-default:focus {
+    color: #333;
+    text-shadow: none;
+    /* Prevent inheritence from `body` */
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+/*
+ * Base structure
+ */
+
+html, body {
+    height: 100%;
+    /* background-color: #333; */
+    font-family: "Montserrat", sans-serif !important;
+    background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_wall.png) !important;
+    position: relative;
+    z-index: 9999999;
+    color: #fff;
+    text-align: center;
+    /* font: Open Sans; */
+}
+
+/* body {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+} */
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    /* For at least Firefox */
+    min-height: 100%;
+}
+
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.cover-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cover-heading {
+    font-family: "Montserrat", sans-serif;
+    /* font-weight: 200; */
+    text-shadow: 0px 0px 20px #fff;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 999999;
+}
+
+/* #lamp_shadow {
+	text-shadow: 0px 0px 20px #fff;
+	color: rgba(255, 255, 255, 0.8)
+} */
+
+/* Padding for spacing */
+
+.inner {
+    padding: 30px;
+}
+
+/*
+ * Header
+ */
+
+.masthead-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.masthead-nav>li {
+    display: inline-block;
+}
+
+.masthead-nav>li+li {
+    margin-left: 20px;
+}
+
+.masthead-nav>li>a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    /* IE8 proofing */
+    color: rgba(255, 255, 255, .75);
+    border-bottom: 2px solid transparent;
+}
+
+.masthead-nav>li>a:hover, .masthead-nav>li>a:focus {
+    background-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.masthead-nav>.active>a, .masthead-nav>.active>a:hover, .masthead-nav>.active>a:focus {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+    .masthead-brand {
+        float: left;
+    }
+    .masthead-nav {
+        float: right;
+    }
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+    padding: 0 20px;
+}
+
+.cover .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+    color: #999;
+    /* IE8 proofing */
+    color: rgba(255, 255, 255, .5);
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+    /* Pull out the header and footer */
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+    .mastfoot {
+        position: fixed;
+        bottom: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+        vertical-align: middle;
+    }
+    /* Handle the widths */
+    .masthead, .mastfoot, .cover-container {
+        width: 100%;
+        /* Must be percentage or pixels for horizontal alignment */
+    }
+}
+
+@media (min-width: 992px) {
+    .masthead, .mastfoot, .cover-container {
+        width: 700px;
+    }
+}
+
+/* GLOBALS */
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.switch {
+    margin: 50px auto;
+    position: relative;
+}
+
+.switch label {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+}
+
+.switch input {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* DEMO 3 */
+
+.switch.demo3 {
+    width: 180px;
+    height: 50px;
+}
+
+.switch.demo3 label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #a5a39d;
+    border-radius: 40px;
+    box-shadow: inset 0 3px 8px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.switch.demo3 label:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    border-radius: inherit;
+    background: #ababab;
+    background: -moz-linear-gradient(#f2f2f2, #ababab);
+    background: -ms-linear-gradient(#f2f2f2, #ababab);
+    background: -o-linear-gradient(#f2f2f2, #ababab);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#ababab));
+    background: -webkit-linear-gradient(#f2f2f2, #ababab);
+    background: linear-gradient(#f2f2f2, #ababab);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.switch.demo3 label:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    right: -18px;
+    bottom: -18px;
+    left: -18px;
+    border-radius: inherit;
+    background: #eee;
+    background: -moz-linear-gradient(#e5e7e6, #eee);
+    background: -ms-linear-gradient(#e5e7e6, #eee);
+    background: -o-linear-gradient(#e5e7e6, #eee);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e5e7e6), to(#eee));
+    background: -webkit-linear-gradient(#e5e7e6, #eee);
+    background: linear-gradient(#e5e7e6, #eee);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -ms-filter: blur(1px);
+    -o-filter: blur(1px);
+    filter: blur(1px);
+}
+
+.switch.demo3 label i {
+    display: block;
+    height: 100%;
+    width: 60%;
+    border-radius: inherit;
+    background: silver;
+    position: absolute;
+    z-index: 2;
+    right: 40%;
+    top: 0;
+    background: #b2ac9e;
+    background: -moz-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -ms-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -o-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f2f6), to(#b2ac9e));
+    background: -webkit-linear-gradient(#f7f2f6, #b2ac9e);
+    background: linear-gradient(#f7f2f6, #b2ac9e);
+    box-shadow: inset 0 1px 0 white, 0 0 8px rgba(0, 0, 0, 0.3), 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch.demo3 label i:after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 50%;
+    background: #d2cbc3;
+    background: -moz-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -ms-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -o-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#cbc7bc), to(#d2cbc3));
+    background: -webkit-linear-gradient(#cbc7bc, #d2cbc3);
+    background: linear-gradient(#cbc7bc, #d2cbc3);
+    border-radius: inherit;
+}
+
+.switch.demo3 label i:before {
+    content: "off";
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 1px 0 #bcb8ae, 0 -1px 0 #97958e;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    right: -50%;
+}
+
+.switch.demo3 input:checked~label {
+    background: #9abb82;
+}
+
+.switch.demo3 input:checked~label i {
+    right: -1%;
+}
+.name {
+    /* text-shadow: 0px 0px 20px #fff; */
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.switch.demo3 input:checked~label i:before {
+    content: "on";
+    right: 115%;
+    color: #82a06a;
+    text-shadow: 0 1px 0 #afcb9b, 0 -1px 0 #6b8659;
+}
+
+/*
+
+*********** LAVA LAMP CSS HERE
+
+*/
+
+*, *:before, *:after {
+    transition: .2s ease-in-out;
+}
+
+#light-switch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#light-switch:checked #background1 {
+    background-color: #ebdbac;
+}
+
+#light-switch:checked~#light-switch-label {
+    box-shadow: 0 2px 2px #d0b57b;
+}
+
+#light-switch:checked~#light-switch-label .switch {
+    box-shadow: 0 10px 10px -5px #e9dbb0, 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 4px #fff4d3, 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#light-switch:checked~#light-switch-label .switch:before {
+    height: 75px;
+    top: 0px;
+    line-height: 75px;
+    background: #fff4d3;
+    color: #64bf60;
+    text-shadow: 0 0 3px #38ff2e;
+}
+
+#light-switch:checked~#light-switch-label .switch:after {
+    height: 70px;
+    bottom: 5px;
+    line-height: 70px;
+    background: #fffaea;
+    box-shadow: 0 5px 0 #d0b57b;
+    color: #d7bf95;
+    text-shadow: 0 0 0px transparent;
+}
+
+#light-switch-label {
+    position: relative;
+    display: block;
+    height: 250px;
+    width: 200px;
+    z-index: 1;
+    margin: 50px auto 50px auto;
+    background-color: #fff4d3;
+    border-radius: 10px;
+}
+
+#light-switch-label .switch {
+    cursor: pointer;
+    height: 150px;
+    width: 100px;
+    background: #fffaea;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -75px 0 0 -50px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 10px -5px rgba(233, 219, 176, 0), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 4px #fff4d3, 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#light-switch-label .switch:before {
+    content: 'ON';
+    display: block;
+    position: absolute;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    width: 100px;
+    top: 5px;
+    left: 0;
+    background: #efe0b1;
+    color: #bfa371;
+    border-radius: 5px 5px 0 0;
+}
+
+#light-switch-label .switch:after {
+    content: 'OFF';
+    display: block;
+    position: absolute;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    width: 100px;
+    bottom: 0;
+    left: 0;
+    background: #fff4d3;
+    color: #a4441a;
+    text-shadow: 0 0 3px #ff4e00;
+    border-radius: 0 0 5px 5px;
+}
+
+#light-switch-label .screw {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    left: 50%;
+    margin-left: -8px;
+    background: #e3d4a5;
+    overflow: hidden;
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+#light-switch-label .screw:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    margin-left: -1px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#light-switch-label .screw:first-of-type {
+    top: 20px;
+}
+
+#light-switch-label .screw:last-of-type {
+    bottom: 20px;
+}
+
+#background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: #132436; */
+}
+
+/*
+    COFFEE MAKER CSS HERE
+
+ */
+
+.headingOuter {
+    background: #f1f1f1;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding: 10px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    font-size: 1.6em;
+}
+
+.headingOuter:first-child {
+    margin-top: 0;
+}
+
+h1+.headingOuter {
+    margin-top: 0;
+}
+
+.toggle {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    user-select: none;
+}
+
+.toggle--checkbox {
+    display: none;
+}
+
+.toggle--btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.4em;
+    transition: all 350ms ease-in;
+}
+
+.toggle--btn:hover {
+    cursor: pointer;
+}
+
+.toggle--btn, .toggle--btn:before, .toggle--btn:after, .toggle--checkbox, .toggle--checkbox:before, .toggle--checkbox:after, .toggle--feature, .toggle--feature:before, .toggle--feature:after {
+    transition: all 250ms ease-in;
+}
+
+.toggle--btn:before, .toggle--btn:after, .toggle--checkbox:before, .toggle--checkbox:after, .toggle--feature:before, .toggle--feature:after {
+    content: '';
+    display: block;
+}
+
+.toggle--push .toggle--btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #f9f8f6;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px 0px #333, 0 15px 20px 0px #cccccc;
+}
+
+.toggle--push .toggle--btn, .toggle--push .toggle--btn:before, .toggle--push .toggle--btn:after {
+    transition-duration: 150ms;
+}
+
+.toggle--push .toggle--btn:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 22.7272727273px;
+    height: 22.7272727273px;
+    border-radius: 50%;
+    background-color: #FF9900;
+    box-shadow: inset 0 0 0 5px #ccc, inset 0 0 0 14px #f9f8f6;
+}
+
+.toggle--push .toggle--btn:after {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 12px;
+    background-color: #ccc;
+    box-shadow: 0 0 0 2.5px #f9f8f6;
+}
+
+.toggle--push .toggle--btn:hover:before {
+    box-shadow: inset 0 0 0 5px #b3b3b3, inset 0 0 0 14px #f9f8f6;
+}
+
+.toggle--push .toggle--btn:hover:after {
+    background-color: #b3b3b3;
+}
+
+.toggle--push .toggle--checkbox:checked+.toggle--btn {
+    box-shadow: 0 2px 5px 0px gray, 0 15px 20px 0px transparent;
+}
+
+.toggle--push .toggle--checkbox:checked+.toggle--btn:before {
+    box-shadow: inset 0 0 0 5px #FF9900, inset 0 0 0 14px #f9f8f6;
+}
+
+.toggle--push .toggle--checkbox:checked+.toggle--btn:after {
+    background-color: #FF9900;
+}
+
+.toggle--push--glow {
+    /* background: #111; */
+    padding: 0px 0;
+    margin: 50px auto 50px auto;
+}
+
+.toggle--push--glow .toggle--btn {
+    background-color: #dfdfdf;
+    box-shadow: 0 5px 10px 0px #333, 0 0 0 3px #444444, 0 0 8px 2px transparent, 0 0 0 6px #919191;
+}
+
+.toggle--push--glow .toggle--btn:before {
+    box-shadow: inset 0 0 0 5px #aaa, inset 0 0 0 14px #dfdfdf;
+}
+
+.toggle--push--glow .toggle--btn:after {
+    background-color: #aaa;
+    box-shadow: 0 0 0 2.5px #dfdfdf;
+}
+
+.toggle--push--glow .toggle--btn:hover:before {
+    box-shadow: inset 0 0 0 5px #777777, inset 0 0 0 14px #dfdfdf;
+}
+
+.toggle--push--glow .toggle--btn:hover:after {
+    background-color: #777777;
+}
+
+.toggle--push--glow .toggle--checkbox:checked+.toggle--btn {
+    box-shadow: 0 0px 8px 0 #0072ad, 0 0 0 3px #0094e0, 0 0 30px 0 #0094e0, 0 0 0 6px #777777;
+}
+
+.toggle--push--glow .toggle--checkbox:checked+.toggle--btn:before {
+    box-shadow: inset 0 0 0 5px #0094e0, inset 0 0 0 14px #dfdfdf;
+}
+
+.toggle--push--glow .toggle--checkbox:checked+.toggle--btn:after {
+    background-color: #0094e0;
+}
+
+/*
+
+
+LED CSS HERE
+
+*/
+
+/*dark background to support form theme*/
+
+/*sass variables used*/
+
+/*site container*/
+
+.wrapper {
+    width: 420px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px 0px 0px 0px;
+    font: 25px;
+    color: #FFF;
+    text-transform: uppercase;
+    text-shadow: #000 0px 1px 5px;
+    margin: 0px;
+}
+
+p {
+    color: #6E6E6E;
+    text-shadow: #000 0px 1px 5px;
+    margin-bottom: 30px;
+}
+
+.form {
+    width: 100%;
+}
+
+input[type="text"], input[type="email"] {
+    width: 98%;
+    padding: 15px 0px 15px 8px;
+    border-radius: 5px;
+    box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    outline: none;
+    border: none;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    color: #6E6E6E;
+    text-shadow: #000 0px 1px 5px;
+}
+
+input[type="submit"], input[type="reset"] {
+    font-family: "Montserrat", sans-serif !important;
+    width: 30%;
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#28D2DE), to(#1A878F));
+    background-image: -webkit-linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: -moz-linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: -o-linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: linear-gradient(#28D2DE 0%, #1A878F 100%);
+    font: 14px Oswald;
+    color: #FFF;
+    text-transform: uppercase;
+    text-shadow: #000 0px 1px 5px;
+    border: 1px solid #000;
+    opacity: 0.7;
+    -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.8) !important;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.2)));
+}
+
+input:focus {
+    box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.7), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    -ms-transition: 1s ease;
+    transition: 1s ease;
+}
+
+input[type="submit"]:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+input[type="reset"]:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.name-help {
+    display: none;
+    padding: 0px;
+    margin: 0px 0px 15px 0px;
+}
+
+/* ===================================================
+   Day/Night and Gender toggle buttons
+   =================================================== */
+
+.toggle--daynight .toggle--btn, .toggle--like .toggle--btn {
+    position: relative;
+    height: 70px;
+    width: 125px;
+    border-radius: 70px;
+}
+
+.toggle--daynight .toggle--btn:before, .toggle--like .toggle--btn:before {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.toggle--daynight .toggle--btn {
+    border: 5px solid #1c1c1c;
+    background-color: #3c4145;
+}
+
+.toggle--daynight .toggle--btn:before {
+    background-color: #fff;
+    border: 5px solid #e3e3c7;
+}
+
+.toggle--daynight .toggle--btn:after {
+    position: absolute;
+    top: 62%;
+    left: 39px;
+    z-index: 10;
+    width: 11.2px;
+    height: 11.2px;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: #fff 0 0, #fff 3px 0, #fff 6px 0, #fff 9px 0, #fff 11px 0, #fff 14px 0, #fff 16px 0, #fff 21px -1px 0 1px, #fff 16px -7px 0 -2px, #fff 7px -7px 0 1px, #d3d3d3 0 0 0 4px, #d3d3d3 6px 0 0 4px, #d3d3d3 11px 0 0 4px, #d3d3d3 16px 0 0 4px, #d3d3d3 21px -1px 0 5px, #d3d3d3 16px -7px 0 1px, #d3d3d3 7px -7px 0 5px;
+    transition: opacity 100ms ease-in;
+}
+
+@keyframes starry_star {
+    50% {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: #fff 30px -3px 0 0, #fff 12px 10px 0 -1px, rgba(255, 255, 255, 0.1) 38px 18px 0 1px, #fff 32px 34px 0 0, rgba(255, 255, 255, 0.1) 20px 24px 0 -1.5px, #fff 5px 38px 0 1px;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 100;
+        transform: scale(1.1);
+    }
+    55% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 100;
+        transform: scale(1);
+    }
+}
+
+.toggle--daynight .toggle--feature {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 52.5%;
+    z-index: 20;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.1) 30px -3px 0 0, rgba(255, 255, 255, 0.1) 12px 10px 0 -1px, #fff 38px 18px 0 1px, rgba(255, 255, 255, 0.1) 32px 34px 0 0, #fff 20px 24px 0 -1.5px, rgba(255, 255, 255, 0.1) 5px 38px 0 1px;
+    animation: starry_star 5s ease-in-out infinite;
+}
+
+.toggle--daynight .toggle--feature:before {
+    position: absolute;
+    top: -2px;
+    left: -25px;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 5px solid #e3e3c7;
+    box-shadow: #e3e3c7 -28px 0 0 -3px, #e3e3c7 -8px 24px 0 -2px;
+    transform-origin: -6px 130%;
+}
+
+.toggle--daynight .toggle--checkbox:checked+.toggle--btn {
+    background-color: #9ee3fb;
+    border: 5px solid #86c3d7;
+}
+
+.toggle--daynight .toggle--checkbox:checked+.toggle--btn:before {
+    left: 55px;
+    background-color: #ffdf6d;
+    border: 5px solid #e1c348;
+}
+
+.toggle--daynight .toggle--checkbox:checked+.toggle--btn:after {
+    opacity: 100;
+    animation-name: bounceIn;
+    animation-duration: 0.60s;
+    animation-delay: 0.10s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+}
+
+.toggle--daynight .toggle--checkbox:checked+.toggle--btn>.toggle--feature {
+    opacity: 0;
+    box-shadow: rgba(255, 255, 255, 0.1) 30px -3px 0 -4px, rgba(255, 255, 255, 0.1) 12px 10px 0 -5px, #fff 38px 18px 0 -3px, rgba(255, 255, 255, 0.1) 32px 34px 0 -4px, #fff 20px 24px 0 -5.5px, rgba(255, 255, 255, 0.1) 5px 38px 0 -3px;
+    animation: none;
+}
+
+.toggle--daynight .toggle--checkbox:checked+.toggle--btn>.toggle--feature:before {
+    left: 25px;
+    transform: rotate(70deg);
+}
