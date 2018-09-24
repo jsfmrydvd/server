@@ -69,6 +69,14 @@ html, body {
     position: relative;
     z-index: 99;
 }
+b {
+    font-family: "Montserrat", sans-serif;
+    /* font-weight: 200; */
+    text-shadow: 0px 0px 5px #fff;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 99;
+}
 
 /* #lamp_shadow {
 	text-shadow: 0px 0px 20px #fff;
