@@ -17,7 +17,6 @@
     <!-- Custom styles for this template -->
     <link href="/stylesheets/style.css" rel="stylesheet">
 
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -25,83 +24,94 @@
     <![endif]-->
 </head>
 
-<body id="background1">
-    <div id="back"></div>
-<div id="front"></div>
-    <!-- <div class="container"> -->
-    <!-- <div class="row"> -->
-    <div class="col-md-6">
-        <div class="site-wrapper">
-            <div class="site-wrapper-inner">
-                <div class="cover-container">
-                    <div class="inner cover">
-                        <h1 class="cover-heading">Mouse</h1>
-                        <div class="toggle toggle--daynight">
-                            <input type="checkbox" id="toggle--daynight" class="toggle--checkbox">
-                            <label class="toggle--btn" for="toggle--daynight"><span class="toggle--feature"></span></label>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Machine Learning</a>
+        <a href="#">Fake News</a>
+    </div>
+
+    <div id="main">
+        <span style="position: absolute;font-size:30px;cursor:pointer;top: 15px;left: 40px;" onclick="openNav()">&#9776;</span>
+        <span><h4>A Link to Intelligent Systems usingWeb Applications (ALIWA)</h4></span>
+    </div>
+    <hr style="margin: 0;" />
+    <div class="background-details">
+        <div class="col-md-6">
+            <div class="site-wrapper">
+                <div class="site-wrapper-inner">
+                    <div class="cover-container">
+                        <div class="inner cover">
+                            <h1 class="cover-heading">Mouse</h1>
+                            <div class="toggle toggle--daynight">
+                                <input type="checkbox" id="toggle--daynight" class="toggle--checkbox">
+                                <label class="toggle--btn" for="toggle--daynight"><span class="toggle--feature"></span></label>
+                                <img class="image-content" src="https://i.imgur.com/QLkgtQt.png" style="opacity: 0.5" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="site-wrapper">
-            <div class="site-wrapper-inner">
-                <div class="cover-container">
-                    <div class="inner cover">
-                        <h1 class="cover-heading" id="lamp_shadow">Lamp</h1>
-                        <input type="checkbox" id="light-switch" />
-                        <label for="light-switch" id="light-switch-label">
+        <div class="col-md-6">
+            <div class="site-wrapper">
+                <div class="site-wrapper-inner">
+                    <div class="cover-container">
+                        <div class="inner cover">
+                            <h1 class="cover-heading" id="lamp_shadow">Lamp</h1>
+                            <input type="checkbox" id="light-switch" />
+                            <label for="light-switch" id="light-switch-label">
                           <div class="screw"></div>
                           <div class="switch"></div>
                           <div class="screw"></div>
                         </label>
-                        <div id="background"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="site-wrapper">
-            <div class="site-wrapper-inner">
-                <div class="cover-container">
-                    <div class="inner cover">
-                        <h1 class="cover-heading">Coffee maker</h1>
-                        <div class="toggle toggle--push toggle--push--glow">
-                            <input type="checkbox" id="toggle--push--glow" class="toggle--checkbox">
-                            <label class="toggle--btn" for="toggle--push--glow" data-label-on="on" data-label-off="off"></label>
+                            <div id="background"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="site-wrapper">
-            <div class="site-wrapper-inner">
-                <div class="cover-container">
-                    <div class="inner cover">
-                        <div class="wrapper">
-                            <h1 class="cover-heading">Lorem ipsum</h1>
-                            <p>
+        <div class="col-md-6">
+            <div class="site-wrapper">
+                <div class="site-wrapper-inner">
+                    <div class="cover-container">
+                        <div class="inner cover">
+                            <h1 class="cover-heading">Coffee maker</h1>
+                            <div class="toggle toggle--push toggle--push--glow">
+                                <input type="checkbox" id="toggle--push--glow" class="toggle--checkbox">
+                                <label class="toggle--btn" for="toggle--push--glow" data-label-on="on" data-label-off="off"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="site-wrapper">
+                <div class="site-wrapper-inner">
+                    <div class="cover-container">
+                        <div class="inner cover">
+                            <div class="wrapper">
+                                <h1 class="cover-heading">Led t-shirt</h1>
+                                <p>
 
-                            </p>
-                            <form class="form" action="" id="form">
-                                <input type="text" class="name" placeholder="Message..." id="Input">
-                                <div>
-                                    <p class="name-help">Please enter a message.</p>
-                                </div>
-                                <input type="submit" class="submit" value="Submit">
-                                <input type="reset" class="submit" value="Reset">
-                            </form>
+                                </p>
+                                <form class="form" action="" id="form">
+                                    <input type="text" class="name" placeholder="Message..." id="Input">
+                                    <div>
+                                        <p class="name-help">Please enter a message.</p>
+                                    </div>
+                                    <input type="submit" class="submit" value="Submit">
+                                    <input type="reset" class="submit" value="Reset">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -136,6 +146,16 @@
                 return false;
             });
         });
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
     </script>
 </body>
 
