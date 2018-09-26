@@ -1041,4 +1041,29 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+
+  .image-content {
+      display: none;
+  }
 }
+
+@media (max-width: 575.98px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+
+    .image-content {
+        display: none;
+    }
+    .inner{
+        padding: 0;
+    }
+    .cover {
+        padding: 0;
+    }
+    .wrapper.message {
+        width: 340px;
+    }
+    .h4-heading {
+        padding-left: 50px;
+    }
+ }

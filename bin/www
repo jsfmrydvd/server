@@ -23,9 +23,21 @@ var server = http.createServer(app);
 var io =require("socket.io").listen(server);
 io.on("connection", function(socket){
   console.log("Client Connected");
-  socket.on("stateChanged", function(state){
-    console.log("State Changed " + state);
-    io.emit("updateState", state);
+  socket.on("mouseState", function(state){
+    console.log("State Changed " + "mouse:" + state);
+    io.emit("updateState", "mouse:" + state);
+  })
+  socket.on("lampState", function(state){
+    console.log("State Changed " + "lamp:" + state);
+    io.emit("updateState", "lamp:" + state);
+  })
+  socket.on("coffeeState", function(state){
+    console.log("State Changed " + "coffee:" + state);
+    io.emit("updateState", "coffee:" + state);
+  })
+  socket.on("ledMessage", function(message){
+    console.log("State Changed " + "led:" + message);
+    io.emit("updateState", "led:" + message);
   })
 });
 // io.on('connection', function(socket){
